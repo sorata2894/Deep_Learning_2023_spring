@@ -20,7 +20,7 @@ device = torch.device("cuda", 0)
 if __name__ == '__main__':
     
     # ==================== hyper-parameters ===================================
-    epochs = 100
+    epochs = 150
     batch_size = 64
     lr = 1e-2
     # =========================================================================
@@ -265,5 +265,5 @@ if __name__ == '__main__':
     print("DeepConvNet with LeakyReLU Max test  Acc = ", Max_acc_test_DeepConv_LeakyReLU)
 
     plot_comparison_result(epochs, acc_test_history_DeepConv_ELU, acc_test_history_DeepConv_ReLU, acc_test_history_DeepConv_LeakyReLU,
-                            acc_train_history_DeepConv_ELU, acc_train_history_DeepConv_ReLU, acc_train_history_DeepConv_LeakyReLU, Net_name = "DeepConv")
-    
+                           acc_train_history_DeepConv_ELU, acc_train_history_DeepConv_ReLU, acc_train_history_DeepConv_LeakyReLU, Net_name = "DeepConv",
+                           fig_name="DeepConvNet_epoch150_batch64_adam_le_2")

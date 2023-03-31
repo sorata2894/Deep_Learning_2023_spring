@@ -20,7 +20,7 @@ device = torch.device("cuda", 0)
 if __name__ == '__main__':
     
     # ==================== hyper-parameters ===================================
-    epochs = 100
+    epochs = 150
     batch_size = 64
     lr = 1e-2
     # =========================================================================
@@ -60,11 +60,6 @@ if __name__ == '__main__':
     model_EEG_ELU = EEGNet(class_num=2, act_choose="ELU")
     model_EEG_ReLU = EEGNet(class_num=2, act_choose="ReLU")
     model_EEG_LeakyReLU = EEGNet(class_num=2, act_choose="LeakyReLU")
-
-    
-    # model_EEG_ELU = DeepConvNet(class_num=2, act_choose="ELU")
-    # model_EEG_ReLU = DeepConvNet(class_num=2, act_choose="ReLU")
-    # model_EEG_LeakyReLU = DeepConvNet(class_num=2, act_choose="LeakyReLU")
 
 
     optimizer_EEG_ELU = optim.Adam(model_EEG_ELU.parameters(), lr=lr, betas=(0.9, 0.999), eps=1e-08, weight_decay=1e-7)
@@ -270,5 +265,6 @@ if __name__ == '__main__':
     print("EEGNet with LeakyReLU Max test Acc = ", Max_acc_test_EEG_LeakyReLU)
 
     plot_comparison_result(epochs, acc_test_history_EEG_ELU, acc_test_history_EEG_ReLU, acc_test_history_EEG_LeakyReLU,
-                            acc_train_history_EEG_ELU, acc_train_history_EEG_ReLU, acc_train_history_EEG_LeakyReLU, Net_name = "EEG")
+                           acc_train_history_EEG_ELU, acc_train_history_EEG_ReLU, acc_train_history_EEG_LeakyReLU, Net_name = "EEG",
+                           fig_name="EEGNet_epoch150_batch64_adam_le_2")
     

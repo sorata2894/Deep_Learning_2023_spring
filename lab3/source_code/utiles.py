@@ -21,9 +21,9 @@ class transform_dataset(Dataset):
         # --------------------------------------------
         return len(self.X_data)
     
-def plot_comparison_result(epochs, ELU_test, ReLU_test, LeakyReLU_test, ELU_train, ReLU_train, LeakyReLU_train, Net_name = "EEG"):
+def plot_comparison_result(epochs, ELU_test, ReLU_test, LeakyReLU_test, ELU_train, ReLU_train, LeakyReLU_train, Net_name = "EEG", fig_name = None):
     import matplotlib.pyplot as plt
-    save_fig_name = Net_name + "Net_AUC_comparison.png"
+    save_fig_name = fig_name + ".png"
     fig_title = "Activation function comparison(" + Net_name + "Net)"
     epochs_list = [i+1 for i in range(epochs)]
     fig , ax = plt.subplots()
